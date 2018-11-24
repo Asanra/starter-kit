@@ -7,4 +7,4 @@
 
 /* SITE */
 	Language: Español
-	Standars: HTML5, CSS3, CSS Grid Systems, JavaScript, Node.js, NPM, Gulp
+	Standars: HTML5, CSS3, CSS Grid System, JavaScript, Node.js, NPM, Gulp
