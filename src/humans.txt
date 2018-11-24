@@ -1,0 +1,10 @@
+/* Asanra
+
+/* TEAM */
+	Design and Programming: Asanra
+	Contact: asanra00@gmail.com
+	From: León, Spain
+
+/* SITE */
+	Language: Español
+	Standars: HTML5, CSS3, CSS Grid Systems, JavaScript, Node.js, NPM, Gulp

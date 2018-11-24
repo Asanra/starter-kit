@@ -1,0 +1,126 @@
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+a {
+    padding: inherit;
+    color: #000000;
+    text-decoration: none;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+/* Baseline Grid */
+h1 {
+    font-size: 3em; /* 48 / 16 */
+    /*line-height: 1em; /* 48 / 48 */
+    line-height: 1.333333333333333em; /* 48 / 36 */
+    margin-bottom: .5em; /* 24 / 48 */
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+    font-size: 2.25em; /* 36 / 16 */
+    line-height: 1.333333333333333em; /* 48 / 36 */
+    /*margin-bottom: .6666666666666667em; /* 24 / 36 */
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 1.5em; /* 24 / 16 */
+    line-height: 1em; /* 24 / 24 */
+    margin-bottom: 1em; /* 24 / 24 */
+}
+
+h4 {
+    font-size: 1.3125em; /* 21 / 16 */
+    line-height: 1.142857142857143em; /* 24 / 21 */
+    margin-bottom: 1.142857142857143em; /* 24 / 21 */
+}
+
+h5 {
+    font-size: 1.125em; /* 18 / 16 */
+    line-height: 1.333333333333333em; /* 24 / 18 */
+    margin-bottom: 1.333333333333333em; /* 24 / 18 */
+}
+
+h6 {
+    font-size: 1em; /* 16 / 16 */
+    line-height: 1.5em; /* 24 / 16 */
+    margin-bottom: 1.5em; /* 24 / 16 */
+}
+
+p {
+    font-size: 1em; /* 16 / 16 */
+    line-height: 1.5em; /* 24 / 16 */
+    margin-bottom: 1.5em; /* 24 / 16 */
+}
+/* ---------- */
+
+.l-wrap {
+    max-width: 1120px; /* 70em */
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* DEBUG GRID */
+.fixed-gutter-grid .column {
+    /* 
+    /* split gutters (margin)
+    width: calc((100% - 20px * 12) / 12);
+    margin-right: 10px;
+    margin-left: 10px;
+    */
+
+    /* 
+    /* split gutters (padding)
+    */
+    width: calc(100% / 12);
+    padding-right: 10px;
+    padding-left: 10px;
+    
+    float: left;
+}
+
+/* TEST */
+.background {
+    height: 80px;
+    background: rgba(255, 0, 191, 0.25);
+}
+
+/* clearfix */
+.fixed-gutter-grid:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+/* ---------- */
+
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 48em) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 62em) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 75em) {
+}
