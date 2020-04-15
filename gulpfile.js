@@ -15,6 +15,7 @@ var gulp = require('gulp'),
   runSequence = require('run-sequence'),
   imagemin = require('gulp-imagemin'),
   svgmin = require('gulp-svgmin'),
+  cachebust = require('gulp-cache-bust');
   files = {
     statics : [
       'src/humans.txt',
@@ -86,6 +87,12 @@ return gulp.src('src/*.html')
     .pipe(gulp.dest('dist/'));
 });
 
+gulp.task('php', function () {
+  return gulp.src('src/*.php')
+    .pipe(useref())
+    .pipe(gulp.dest('dist/'));
+});
+
 gulp.task('statics', function() {
   return gulp.src(files.statics)
     .pipe(gulp.dest('dist/'));
@@ -99,8 +106,10 @@ gulp.task('fonts', function() {
 
 gulp.task('images', function() {
   return gulp.src('src/img/**/*.+(png|jpeg|jpg|gif)')
-    .pipe(cache(imagemin({
-      verbose: true
+    .pipe(cache(imagemin([
+      imagemin.mozjpeg({quality: 70, progressive: true})
+    ], {
+    verbose: true
     })))
     .pipe(gulp.dest('dist/img'));
 });
@@ -109,6 +118,14 @@ gulp.task('svg', function() {
   return gulp.src('src/img/**/*.svg')
     .pipe(svgmin())
     .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('hash', function() {
+  return gulp.src('dist/*.php')
+    .pipe(cachebust({
+      type: 'timestamp'
+    }))
+    .pipe(gulp.dest('dist'));
 });
 
 /*
@@ -143,7 +160,7 @@ gulp.task('default', function(callback) {
 */
 gulp.task('build', function(callback) {
   runSequence('clean:dist',
-    ['js', 'css', 'html', 'statics', 'fonts', 'images'],
+    ['php', 'js', 'css', 'html', 'statics', 'fonts', 'images'],
     callback
   )
 });
